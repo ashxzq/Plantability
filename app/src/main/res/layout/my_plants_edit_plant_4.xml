@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/progressBar4"
+        android:src="@drawable/progress_bar_4"
+        android:layout_marginVertical="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enterSunWater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="Edit Sun and Water Needs"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar4"
+        android:fontFamily="@font/font3"
+        android:textColor="@color/greeninWhite"
+        android:paddingTop="10dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enterSunWater">
+        <LinearLayout
+            android:id="@+id/shadedSunBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/noSunIcon"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/shady_sun" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/partialSunBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/partialSunIcon"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/partial_sun" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fulldSunBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fullSunIcon"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/full_sun"/>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sunIconPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sun Level"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/sunLevelInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSun"
+        app:layout_constraintVertical_bias="0.82"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite" />
+
+    <EditText
+        android:id="@+id/sunLevelInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="click to select (Shaded,Partial,Full)"
+        app:layout_constraintBottom_toTopOf="@+id/numWateringTimesPerWeekInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSun"
+        app:layout_constraintVertical_bias="0.388"
+        android:fontFamily="@font/font7"/>
+
+    <TextView
+        android:id="@+id/numWateringsPerWeekPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Number of Weekly Waterings"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/numWateringTimesPerWeekInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sunLevelInput"
+        app:layout_constraintVertical_bias="0.809"
+        android:fontFamily="@font/font3"
+        android:textColor="@color/greeninWhite" />
+
+    <EditText
+        android:id="@+id/numWateringTimesPerWeekInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:hint="# of times                                       "
+        app:layout_constraintBottom_toTopOf="@+id/amountWaterPerWeekInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSun"
+        app:layout_constraintVertical_bias="0.687"
+        android:fontFamily="@font/font7"/>
+
+    <TextView
+        android:id="@+id/amountWaterPerWeekPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="8dp"
+        android:text="Amount of Weekly Water"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/amountWaterPerWeekInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numWeedingTimesPerWeekInput"
+        android:fontFamily="@font/font3"
+        android:textColor="@color/greeninWhite" />
+
+    <EditText
+        android:id="@+id/amountWaterPerWeekInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="# of gallons                                     "
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSun"
+        app:layout_constraintVertical_bias="0.792"
+        android:fontFamily="@font/font7"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/backButtonAP4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Back"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+        <Button
+            android:id="@+id/cancelButtonAP4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Cancel"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+        <Button
+            android:id="@+id/nextButtonAP4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Next"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

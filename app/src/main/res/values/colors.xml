@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2fa15f</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="shadedSun">#302C00</color>
+    <color name="partialSun">#857700</color>
+    <color name="fullSun">#FFE500</color>
+
+    <color name="mainGreen">#2fa15f</color>
+    <color name="mainWhite">#ffffff</color>
+    <color name="mainGrey">#a7abb8</color>
+    <color name="buttonWhite">#fdfefd</color>
+    <color name="whiteinGreen">#c2e1cf</color>
+    <color name="greeninWhite">#33a262</color>
+    <color name="blackinWhite">#0a0a0a</color>
+    <color name="grey1inWhite">#afafaf</color>
+    <color name="grey2inWhite">#dbdbdb</color>
+</resources>

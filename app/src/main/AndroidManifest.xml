@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.illinois.cs465.plantability">
+
+<!--    https://stackoverflow.com/questions/63358146/why-does-intent-resolveactivitygetpackagemanager-return-null-even-though-the-->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+<!--    Permissions for Google Calendar Syncing-->
+<!--    https://developer.android.com/training/sync-adapters/creating-sync-adapter#java-->
+    <uses-permission
+        android:name="android.permission.INTERNET"/>
+    <uses-permission
+        android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission
+        android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+<!--    https://github.com/miguelarauj1o/CalendarQuickStart-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+<!--    BE CAREFUL WITH THESE-->
+<!--    https://developer.android.com/guide/topics/providers/calendar-provider.html-->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.illinois.cs465.plantability.OpeningPage"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MyPlots_Base"/>
+        <activity android:name=".MyPlots_AddPlot"/>
+        <activity android:name=".MyPlots_SelectPlant"/>
+        <activity android:name=".MyPlots_PlantDetails"/>
+        <activity android:name=".MyPlots_4x4_Base"/>
+        <activity android:name=".MyPlots_4x4_AddPlant"/>
+        <activity android:name=".MyPlots_4x4_RemovePlant"/>
+        <activity android:name=".MyPlots_4x4_EditLighting"/>
+        <activity android:name=".MyPlots_4x4_SharePlot"/>
+        <activity android:name=".MyPlots_6x8_Base"/>
+        <activity android:name=".MyPlots_6x8_AddPlant"/>
+        <activity android:name=".MyPlots_6x8_RemovePlant"/>
+        <activity android:name=".MyPlots_6x8_EditLighting"/>
+        <activity android:name=".MyPlots_6x8_SharePlot"/>
+
+        <activity android:name=".MyPlants_Base"/>
+        <activity android:name=".MyPlants_AddPlant1"/>
+        <activity android:name=".MyPlants_AddPlant2"/>
+        <activity android:name=".MyPlants_AddPlant3"/>
+        <activity android:name=".MyPlants_AddPlant4"/>
+        <activity android:name=".MyPlants_AddPlant5"/>
+        <activity android:name=".MyPlants_EditPlant2"/>
+        <activity android:name=".MyPlants_EditPlant3"/>
+        <activity android:name=".MyPlants_EditPlant4"/>
+        <activity android:name=".MyPlants_EditPlant5"/>
+        <activity android:name=".MyPlants_PlantDetails"/>
+        <activity android:name=".Plot_Base"/>
+
+
+        <activity android:name=".Discover_Base"/>
+        <activity android:name=".Discover_PlantDetails"/>
+        <activity android:name="Discover_AddToMyPlants"/>
+
+        <activity android:name=".Notifications_Base"/>
+        <activity android:name=".Notifications_EXPERIMENTAL_AddNotification"/>
+
+
+<!--        Impementation for Google Calendar Syncing-->
+<!--            TODO: Uncomment once issues with missing links have been resolved-->
+<!--        <service-->
+<!--            android:name="com.example.android.datasync.SyncService"-->
+<!--            android:exported="true"-->
+<!--            android:process=":sync">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.content.SyncAdapter"/>-->
+<!--            </intent-filter>-->
+<!--            <meta-data android:name="android.content.SyncAdapter"-->
+<!--                android:resource="@xml/syncadapter" />-->
+<!--        </service>-->
+
+<!--        https://github.com/miguelarauj1o/CalendarQuickStart-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

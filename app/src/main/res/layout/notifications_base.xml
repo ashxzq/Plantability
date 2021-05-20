@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Layout Notes-->
+<!--    Put TextView for "Reminders" in a Horizontal Linear Layout-->
+<!--            Add Google Sync Button -->
+<!--    Horizontal Layout for Buttons "Past, Today, Upcoming"-->
+<!--    Vertical Layout, give it all the extra height-->
+<!--        ??How to create dynamically added entries?-->
+<!--        Entries consist of Horizontal Linear Layouts -> make a template-->
+<!--            Each layout has -->
+<!--                Plant Icon, -->
+<!--                Vertical Layout: (Plant Name, Notification String), -->
+<!--                Checkbox Button -->
+<!--                Vertical Layout: (Notification Icon, Link) -->
+<!--        Vertical display needs scrolling function -->
+<!--            Can be done without a scroll bar? Need scroll bar for discoverability? -->
+<!--            Put vertical layout in larger horizontal layout (Notifs, Scroll Vis) -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/opening_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--Layout Notes-->
+    <!--    Horizontal Layout for Buttons "Past, Today, Upcoming", also Google Sync Button-->
+    <!--    Vertical Layout, give it all the extra height-->
+    <!--        ??How to create dynamically added entries?-->
+    <!--        Entries consist of Horizontal Linear Layouts -> make a template-->
+    <!--            Each layout has -->
+    <!--                Plant Icon, -->
+    <!--                Vertical Layout: (Plant Name, Notification String), -->
+    <!--                Checkbox Button -->
+    <!--                Vertical Layout: (Notification Icon, Link) -->
+    <!--        Vertical display needs scrolling function -->
+    <!--            Can be done without a scroll bar? Need scroll bar for discoverability? -->
+    <!--            Put vertical layout in larger horizontal layout (Notifs, Scroll Vis) -->
+
+    <TextView
+        android:id="@+id/opening_message"
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:gravity="top|center"
+        android:paddingTop="10dp"
+        android:text="@string/notifications"
+        android:textSize="25dp"
+        android:fontFamily="@font/font3"
+        android:textColor="@color/greeninWhite"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:gravity="center">
+        <!--        Past,Today,Upcoming Buttons-->
+
+        <Button
+            android:id="@+id/pastButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="PAST"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/font3"
+            android:textColor="@color/whiteinGreen"/>
+        <Button
+            android:id="@+id/todayButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="TODAY"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/font3"
+            android:textColor="@color/whiteinGreen"/>
+        <Button
+            android:id="@+id/upcomingButton"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="match_parent"
+            android:text="UPCOMING"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/font3"
+            android:textColor="@color/whiteinGreen"></Button>
+        <!--        Google Calendar Sync Button-->
+        <!--        <ImageButton-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content" />-->
+        <!--               TODO: ADD IMAGE SOURCE&ndash;&gt;-->
+
+        <!--        https://developer.android.com/training/sync-adapters/creating-sync-adapter#java-->
+        <LinearLayout
+            android:id="@+id/gcSyncButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:src="@drawable/google_calendar_icon_snipped_remove_2"
+                android:background="@drawable/button_gradient_2"
+                android:clickable="false"/>
+
+<!--            <sync-adapter-->
+<!--                xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                android:contentAuthority="com.example.android.datasync.provider"-->
+<!--                android:accountType="com.android.example.datasync"-->
+<!--                android:userVisible="false"-->
+<!--                android:supportsUploading="false"-->
+<!--                android:allowParallelSyncs="false"-->
+<!--                android:isAlwaysSyncable="true"/>-->
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:layout_margin="16dp"
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="5dp"
+        android:verticalScrollbarPosition="right"
+        android:scrollbarThumbVertical="@android:color/darker_gray"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/addNotificationButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:text="Add Notification"-->
+<!--        android:gravity="center"-->
+<!--        android:background="@drawable/bottom_navigation_button_background"/>-->
+
+
+<!--    Conflicted 4-19, removed-->
+    <!--    <ListView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="418dp"-->
+    <!--        android:layout_weight="1">-->
+
+    <!--    </ListView>-->
+
+
+    <!--Creates the bottom navigation bar-->
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:gravity="bottom|center">
+        <!--"My Plots" Button-->
+        <LinearLayout
+            android:id="@+id/my_plots_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_navigation_button_background">
+
+            <ImageView
+                android:paddingTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/my_plots_img"
+                android:src="@drawable/my_plots_icon"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </ImageView>
+            <TextView
+                android:id="@+id/my_plots_text"
+                android:text="@string/my_plots"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="5dp"
+                android:fontFamily="@font/font3"
+                android:textColor="@color/whiteinGreen">
+            </TextView>
+        </LinearLayout>
+        <!--"My Plants" Button-->
+        <LinearLayout
+            android:id="@+id/my_plants_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_navigation_button_background">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/my_plants_img"
+                android:src="@drawable/my_plants_icon"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/my_plants_text"
+                android:text="@string/my_plants"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="5dp"
+                android:fontFamily="@font/font3"
+                android:textColor="@color/whiteinGreen">
+            </TextView>
+        </LinearLayout>
+        <!--"Discover" Button-->
+        <LinearLayout
+            android:id="@+id/discover_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_navigation_button_background">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/discover_img"
+                android:src="@drawable/discover_icon"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/discover_text"
+                android:text="@string/discover"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="5dp"
+                android:fontFamily="@font/font3"
+                android:textColor="@color/whiteinGreen">
+            </TextView>
+        </LinearLayout>
+        <!--"Notifications" Button-->
+        <LinearLayout
+            android:id="@+id/notifications_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_navigation_button_background_selected">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/notifications_img"
+                android:src="@drawable/notifications_icon"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/notifications_text"
+                android:text="@string/notifications"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="5dp"
+                android:fontFamily="@font/font3"
+                android:textColor="@color/whiteinGreen">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

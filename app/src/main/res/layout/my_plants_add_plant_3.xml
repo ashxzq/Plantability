@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/progressBar3"
+        android:src="@drawable/progress_bar_3"
+        android:layout_marginVertical="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enterTiming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="Enter Plant Timeframe"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar3"
+        android:fontFamily="@font/font3"
+        android:textColor="@color/greeninWhite"/>
+
+    <TextView
+        android:id="@+id/startDatePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Date to Plant"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/startDateInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterTiming"
+        app:layout_constraintVertical_bias="0.875"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+
+    <EditText
+        android:id="@+id/startDateInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="MM/DD/YYYY                               "
+        app:layout_constraintBottom_toTopOf="@+id/daysToHarvestInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterTiming"
+        app:layout_constraintVertical_bias="0.45"
+        android:fontFamily="@font/font7"/>
+
+    <TextView
+        android:id="@+id/daysToHarvestPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Expected Days Until Harvest"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/daysToHarvestInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startDateInput"
+        app:layout_constraintVertical_bias="0.875"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+    <EditText
+        android:id="@+id/daysToHarvestInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="# of days                                        "
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterTiming"
+        app:layout_constraintVertical_bias="0.723"
+        android:fontFamily="@font/font7"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/backButtonAP3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Back"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+        <Button
+            android:id="@+id/cancelButtonAP3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Cancel"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+        <Button
+            android:id="@+id/nextButtonAP3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Next"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

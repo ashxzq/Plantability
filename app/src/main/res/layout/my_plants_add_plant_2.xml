@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/progressBar2"
+        android:src="@drawable/progress_bar_2"
+        android:layout_marginVertical="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enterSpacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="Enter Plant Spacing"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar2"
+        android:fontFamily="@font/font3"
+        android:textColor="@color/greeninWhite"/>
+
+    <TextView
+        android:id="@+id/seedDepthPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Seed Depth"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterSpacing"
+        app:layout_constraintBottom_toTopOf="@id/seedDepthInput"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+    <EditText
+        android:id="@+id/seedDepthInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="(in) inches down                               "
+        app:layout_constraintBottom_toTopOf="@+id/seedSpacingInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterSpacing"
+        android:fontFamily="@font/font7"/>
+
+
+    <TextView
+        android:id="@+id/seedSpacingPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Seed Spacing"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seedDepthInput"
+        app:layout_constraintBottom_toTopOf="@id/seedSpacingInput"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+    <EditText
+        android:id="@+id/seedSpacingInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:hint="(in) inches apart                               "
+        app:layout_constraintBottom_toTopOf="@+id/rowSpacingInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterSpacing"
+        app:layout_constraintVertical_bias="0.752"
+        android:fontFamily="@font/font7"/>
+
+
+    <TextView
+        android:id="@+id/rowSpacingPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Row Spacing"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seedSpacingInput"
+        app:layout_constraintBottom_toTopOf="@id/rowSpacingInput"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+    <EditText
+        android:id="@+id/rowSpacingInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="(in) inches apart                                "
+        app:layout_constraintBottom_toTopOf="@+id/plantsPerSquareFootInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterSpacing"
+        app:layout_constraintVertical_bias="0.82"
+        android:fontFamily="@font/font7"/>
+
+
+    <TextView
+        android:id="@+id/plantsPerSquareFootPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Plants Per Square Foot"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rowSpacingInput"
+        app:layout_constraintBottom_toTopOf="@id/plantsPerSquareFootInput"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+    <EditText
+        android:id="@+id/plantsPerSquareFootInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="# of plants                                        "
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterSpacing"
+        app:layout_constraintVertical_bias="0.913"
+        android:fontFamily="@font/font7"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/backButtonAP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Back"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+
+        <Button
+            android:id="@+id/cancelButtonAP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Cancel"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+
+        <Button
+            android:id="@+id/nextButtonAP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Next"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

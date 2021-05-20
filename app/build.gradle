@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.nicprate.plantability"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.3.0-rc01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0-alpha05'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0-alpha05'
+
+    implementation 'com.google.android.material:material:1.4.0-alpha02'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'com.google.code.gson:gson:2.8.6' // For data storage and reuse - POSSIBLY UNNEEDED?
+
+    // For Room Database - data storage and reuse
+    implementation "androidx.room:room-runtime:2.2.6"
+    annotationProcessor "androidx.room:room-compiler:2.2.6"
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+
+    // For Google Calendar
+    // https://github.com/miguelarauj1o/CalendarQuickStart
+    compile 'com.google.android.gms:play-services:6.5.87'
+    compile 'com.google.apis:google-api-services-calendar:v3-rev119-1.19.1'
+    compile 'com.google.api-client:google-api-client:1.19.1'
+    compile 'com.google.api-client:google-api-client-android:1.19.1'
+    compile 'com.google.api-client:google-api-client-gson:1.19.1'
+
+//    More Google Calendar
+//    https://developers.google.com/workspace/guides/android
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.android.support:appcompat-v7:28.0.0'
+//    compile 'com.google.android.gms:play-services-auth:15.0.1'
+//    compile 'pub.devrel:easypermissions:0.3.0'
+//    compile('com.google.api-client:google-api-client-android:1.23.0') {
+//        exclude group: 'org.apache.httpcomponents'
+//    }
+//    compile('com.google.apis:google-api-services-<API>-<VERSION>') {
+//        exclude group: 'org.apache.httpcomponents'
+//    }
+
+
+}

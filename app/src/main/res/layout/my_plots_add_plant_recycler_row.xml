@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/plantImageRecycler"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:clickable="false"
+        android:duplicateParentState="true"
+        android:layout_gravity="center"
+        android:src="@drawable/pumpkin"/>
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:id="@+id/plantName"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:clickable="false"
+        android:duplicateParentState="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:fontFamily="@font/font7"/>
+    <TextView
+        android:id="@+id/position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="0sp"
+        android:clickable="false"
+        android:duplicateParentState="true"/>
+
+
+</LinearLayout>

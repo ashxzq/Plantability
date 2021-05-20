@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/progressBar5"
+        android:src="@drawable/progress_bar_5"
+        android:layout_marginVertical="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enterMaintenance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="Edit Maintenance Needs"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar5"
+        android:textColor="@color/greeninWhite"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/font3"/>
+
+
+    <TextView
+        android:id="@+id/numWeedingTimesPerWeekPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Number of Weekly Weedings"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/numWeedingTimesPerWeekInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterMaintenance"
+        app:layout_constraintVertical_bias="0.848"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+    <EditText
+        android:id="@+id/numWeedingTimesPerWeekInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="# of times                                        "
+        app:layout_constraintBottom_toTopOf="@+id/plantNotesInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterMaintenance"
+        android:fontFamily="@font/font7"/>
+
+
+    <TextView
+        android:id="@+id/plantNotesPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Additional Notes"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/plantNotesInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numWeedingTimesPerWeekInput"
+        app:layout_constraintVertical_bias="0.84"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+    <EditText
+        android:id="@+id/plantNotesInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="(optional)                                        "
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterMaintenance"
+        app:layout_constraintVertical_bias="0.667"
+        android:fontFamily="@font/font7"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/backButtonAP5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Back"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+
+        <Button
+            android:id="@+id/cancelButtonAP5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Cancel"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+
+        <Button
+            android:id="@+id/doneButtonAP5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Done"
+            android:textColor="@color/whiteinGreen"
+            android:fontFamily="@font/font3"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

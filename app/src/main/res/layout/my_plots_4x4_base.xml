@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Layout Notes-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/opening_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:paddingTop="10dp"
+        android:id="@+id/opening_message"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top|center"
+        android:text="Experimental 4x4 Plot"
+        android:textSize="16sp"
+        android:fontFamily="@font/font5"
+        android:textColor="@color/greeninWhite"/>
+
+    <!--top row of icons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@drawable/plot_control_bar_background"
+        >
+        <!--"Plot Size" Button-->
+        <LinearLayout
+            android:id="@+id/view_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/plot_control_background_grey">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/view_mode_image"
+                android:src="@drawable/view"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </ImageView>
+            <TextView
+                android:id="@+id/view_text"
+                android:text="View"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </TextView>
+        </LinearLayout>
+        <!--"Lighting" Button-->
+        <LinearLayout
+            android:id="@+id/lighting_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/plot_control_background_active">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/lighting_img"
+                android:src="@drawable/sun"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </ImageView>
+            <TextView
+                android:id="@+id/lighting_text"
+                android:text="@string/lighting"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </TextView>
+        </LinearLayout>
+        <!--"Add Plant" Button-->
+        <LinearLayout
+            android:id="@+id/add_plant_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/plot_control_background_active">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/add_plant_img"
+                android:src="@drawable/plus"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </ImageView>
+            <TextView
+                android:id="@+id/add_plant_text"
+                android:text="@string/add_plant"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </TextView>
+        </LinearLayout>
+        <!--"Remove Plant" Button-->
+        <LinearLayout
+            android:id="@+id/remove_plant_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/plot_control_background_active">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/remove_plant_image"
+                android:src="@drawable/remove_plant"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </ImageView>
+            <TextView
+                android:id="@+id/remove_plant_text"
+                android:text="Remove Plant"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="-5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </TextView>
+        </LinearLayout>
+        <!--"Share Plot" Button-->
+        <LinearLayout
+            android:id="@+id/share_plot_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/plot_control_background_active">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/share_plot_img"
+                android:src="@drawable/share"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </ImageView>
+            <TextView
+                android:id="@+id/share_plot_text"
+                android:text="@string/share_plot"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <!--Gridview Plot-->
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:gravity="top|center"
+        >
+        <LinearLayout
+            android:id="@+id/tile_1_1_border"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/tile_1_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop ="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:orientation="horizontal"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_1_1_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_1_1_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tile_1_2_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_1_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_1_2_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_1_2_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_1_3_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_1_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_1_3_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_1_3_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_1_4_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_1_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_1_4_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_1_4_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:gravity="top|center">
+
+        <LinearLayout
+            android:id="@+id/tile_2_1_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_2_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_2_1_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_2_1_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_2_2_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_2_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_2_2_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_2_2_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_2_3_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_2_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_2_3_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_2_3_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_2_4_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_2_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_2_4_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_2_4_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:gravity="top|center">
+
+        <LinearLayout
+            android:id="@+id/tile_3_1_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_3_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_3_1_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_3_1_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_3_2_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_3_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_3_2_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_3_2_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_3_3_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_3_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_3_3_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_3_3_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_3_4_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_3_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_3_4_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_3_4_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/row4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:gravity="top|center">
+
+        <LinearLayout
+            android:id="@+id/tile_4_1_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_4_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_4_1_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_4_1_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_4_2_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_4_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_4_2_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_4_2_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_4_3_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_4_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_4_3_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_4_3_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tile_4_4_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tile_4_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/white_image"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:scaleType="fitXY"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true">
+
+                <ImageView
+                    android:id="@+id/tile_4_4_notification_1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:layout_marginBottom ="5dp"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tile_4_4_notification_2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_image"
+                    android:layout_marginBottom ="5dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <!--Creates the bottom navigation bar-->
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:gravity="bottom|center">
+        <!--"My Plots" Button-->
+        <LinearLayout
+            android:id="@+id/my_plots_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_navigation_button_background">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/my_plots_img"
+                android:src="@drawable/my_plots_icon"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/my_plots_text"
+                android:text="@string/my_plots"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="5dp"
+                android:textColor="@color/whiteinGreen"
+                android:fontFamily="@font/font3">
+            </TextView>
+        </LinearLayout>
+        <!--"My Plants" Button-->
+        <LinearLayout
+            android:id="@+id/my_plants_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_navigation_button_background">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/my_plants_img"
+                android:src="@drawable/my_plants_icon"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/my_plants_text"
+                android:text="@string/my_plants"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="5dp"
+                android:textColor="@color/whiteinGreen"
+                android:fontFamily="@font/font3">
+            </TextView>
+        </LinearLayout>
+        <!--"Discover" Button-->
+        <LinearLayout
+            android:id="@+id/discover_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_navigation_button_background">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/discover_img"
+                android:src="@drawable/discover_icon"
+                android:layout_marginTop="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/discover_text"
+                android:text="@string/discover"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="5dp"
+                android:textColor="@color/whiteinGreen"
+                android:fontFamily="@font/font3">
+            </TextView>
+        </LinearLayout>
+        <!--"Notifications" Button-->
+        <LinearLayout
+            android:id="@+id/notifications_button_layout"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_navigation_button_background">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/notifications_img"
+                android:src="@drawable/notifications_icon"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/notifications_text"
+                android:text="@string/notifications"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:paddingTop="5dp"
+                android:textColor="@color/whiteinGreen"
+                android:fontFamily="@font/font3">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

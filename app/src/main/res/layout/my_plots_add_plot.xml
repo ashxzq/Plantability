@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/progressBar1"
+        android:src="@drawable/progress_bar_3"
+        android:layout_marginVertical="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enterIdentification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="Enter Plot Details"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar1"
+        android:fontFamily="@font/font3"
+        android:textColor="@color/greeninWhite"/>
+
+
+    <TextView
+        android:id="@+id/plotNamePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Plot Name"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/plotNameInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterIdentification"
+        app:layout_constraintVertical_bias="0.877"
+        android:textColor="@color/greeninWhite"
+        android:fontFamily="@font/font2"/>
+
+
+    <EditText
+        android:id="@+id/plotNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="(name)                                "
+        app:layout_constraintBottom_toTopOf="@+id/plotHeightInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterIdentification"
+        app:layout_constraintVertical_bias="0.327"
+        android:fontFamily="@font/font7"/>
+
+    <TextView
+        android:id="@+id/plotWidthPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Plot Width"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/plotWidthInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterIdentification"
+        app:layout_constraintVertical_bias="0.972"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+    <EditText
+        android:id="@+id/plotWidthInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="# plants (Demo 4 or 6)           "
+        app:layout_constraintBottom_toTopOf="@+id/plotHeightPrompt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterIdentification"
+        app:layout_constraintVertical_bias="0.823"
+        android:fontFamily="@font/font7"/>
+
+    <TextView
+        android:id="@+id/plotHeightPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Plot Height"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/plotHeightInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterIdentification"
+        app:layout_constraintVertical_bias="0.972"
+        android:fontFamily="@font/font2"
+        android:textColor="@color/greeninWhite"/>
+
+
+    <EditText
+        android:id="@+id/plotHeightInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="# plants (Demo 4 or 8)           "
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterIdentification"
+        app:layout_constraintVertical_bias="0.72"
+        android:fontFamily="@font/font7"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Back"
+            android:fontFamily="@font/font3"
+            android:textColor="@color/whiteinGreen"/>
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Cancel"
+            android:fontFamily="@font/font3"
+            android:textColor="@color/whiteinGreen"/>
+
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="Done"
+            android:fontFamily="@font/font3"
+            android:textColor="@color/whiteinGreen"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

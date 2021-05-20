@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Plantability</string>
+    <!--Strings I (Nic) have added-->
+    <string name="my_plots">My Plots</string>
+    <string name="my_plants">My Plants</string>
+    <string name="discover">Discover</string>
+    <string name="notifications">Notifications</string>
+
+    <string name="opening_message">Welcome to Plantability</string>
+    <string name="opening_message_my_plots">Welcome to "My Plots"</string>
+    <string name="opening_message_my_plants">Welcome to "My Plants"</string>
+    <string name="opening_message_discover">Welcome to "Discover"</string>
+    <string name="opening_message_notifications">Welcome to "Notifications"</string>
+    <string name="opening_message_2Dplot">Plot</string>
+
+
+    <string name="discover_top_text">Recommended Plants for Urbana-Champaign</string>
+<!--strings for plot icons-->
+    <string name="plot_size">Plot Size</string>
+    <string name="lighting">Lighting</string>
+    <string name="add_plant">Add Plant</string>
+    <string name="share_plot">Share Plot</string>
+    <string name="copy_button">Copy</string>
+
+
+</resources>
